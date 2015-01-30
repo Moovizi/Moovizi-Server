@@ -13,7 +13,7 @@ Here are few simple steps to setup the project and get data to start working on 
 
 Few steps to run the project:
 - Get your own Navitia API key: http://navitia.io
-- Set a NAVITIA_KEY environment variable with the Navitia API key as value
+- Set a `NAVITIA_KEY` environment variable with the Navitia API key as value
 
 The project is now setup and ready to run.
 
