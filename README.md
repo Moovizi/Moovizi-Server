@@ -19,11 +19,31 @@ The project is now setup and ready to run.
 
 #### Getting data
 
-You can then get all stations available from Navitia API using the API method:
+You can then get all stations available from Navitia API using our `GET /stations/get` API method.
 
-**Soon™**
+**Note that this is a very long process, between 5-10 minutes!**
 
 ## Documentation
+
+`Stations`
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>HTTP</th>
+      <th>URL</th>
+      <th>Parameters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Get all stations from Navitia API</td>
+      <td>GET</td>
+      <td>/stations/get</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
 
 `Issues`
 <table>
