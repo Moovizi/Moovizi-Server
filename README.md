@@ -63,6 +63,18 @@ You can then get all stations available from Navitia API using our `GET /station
       <td>-</td>
     </tr>
     <tr>
+      <td>Show issues around coordinates</td>
+      <td>GET</td>
+      <td>/issues/around</td>
+      <td>
+        <ul>
+          <li>latitude (float)</li>
+          <li>longitude (float)</li>
+          <li>radius (integer)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>Create an issue</td>
       <td>POST</td>
       <td>/issues</td>
