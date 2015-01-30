@@ -52,4 +52,5 @@ gem 'rails_12factor'
 
 gem 'rest-client'
 gem 'upmin-admin'
+gem 'geocoder'
 gem 'paperclip'

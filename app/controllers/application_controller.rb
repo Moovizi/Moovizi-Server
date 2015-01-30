@@ -43,8 +43,6 @@ class ApplicationController < ActionController::Base
 
   ## Check if other params passed model validations
   def valid_request object, params
-    puts object
-    puts params
     object.attributes = params
     unless object.valid?
       errors = Hash.new

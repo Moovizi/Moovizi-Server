@@ -31,11 +31,20 @@ class IssuesController < ApplicationController
     
     if safe_params = valid_params(pattern, params)
       if issue = valid_object(Issue, safe_params[:id])
-        if updated = valid_request(user, safe_params.except(:id))
+        if updated = valid_request(issue, safe_params.except(:id))
           render json: issue, status: 200, method: :put
         end
       end
     end
   end
 
+  def around
+    pattern = {latitude: true, longitude: true, radius: true}
+
+    if safe_params = valid_params(pattern, params)
+      issues = Issue.near([params[:latitude], params[:longitude]], params[:radius], units: :km)
+      render json: issues, status: 200, method: :get
+    end
+  end
+  
 end

@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   
   get 'stations/get', to: 'stations#get'
 
-  get 'itinerary', to: 'itineraries#search'
+  get :itinerary, to: 'itineraries#search'
 
-  resources :issues, only: [:index, :show, :create, :update]
+  resources :issues, only: [:index, :show, :create, :update] do
+    collection do
+      get :around
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
