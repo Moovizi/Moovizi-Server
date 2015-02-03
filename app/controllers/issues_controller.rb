@@ -42,7 +42,7 @@ class IssuesController < ApplicationController
     pattern = {latitude: true, longitude: true, radius: true}
 
     if safe_params = valid_params(pattern, params)
-      issues = Issue.near([params[:latitude], params[:longitude]], params[:radius], units: :km)
+      issues = Issue.near([params[:latitude], params[:longitude]], params[:radius].to_f / 1000, units: :km)
       render json: issues, status: 200, method: :get
     end
   end
