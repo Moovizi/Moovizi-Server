@@ -8,7 +8,6 @@ class ItinerariesController < ApplicationController
       itinerary = JSON.parse(response)
       itinerary['journeys'].keep_if do |j|
         j['sections'].none? do |s|
-          puts s['type']
           if s['type'] == 'public_transport'
             station_from = Station.where(code: s['from']['id']).first
             station_to = Station.where(code: s['to']['id']).first
