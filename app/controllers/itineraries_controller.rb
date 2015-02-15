@@ -4,7 +4,6 @@ class ItinerariesController < ApplicationController
     pattern = {datetime: true, from: true, to: true, datetime_represents: false}
 
     if safe_params = valid_params(pattern, params)
-      puts("http://api.navitia.io/v1/journeys?from=#{safe_params[:from]}&to=#{safe_params[:to]}&datetime=#{safe_params[:datetime]}&datetime_represents=#{safe_params[:datetime_represents] || 'departure'}&forbidden_uris[]=physical_mode:RapidTransit&forbidden_uris[]=physical_mode:Metro&forbidden_uris[]=physical_mode:CheckOut&forbidden_uris[]=physical_mode:CheckIn&forbidden_uris[]=physical_mode:default_physical_mode")
       response = RestClient.get "http://api.navitia.io/v1/journeys?from=#{safe_params[:from]}&to=#{safe_params[:to]}&datetime=#{safe_params[:datetime]}&datetime_represents=#{safe_params[:datetime_represents] || 'departure'}&forbidden_uris[]=physical_mode:RapidTransit&forbidden_uris[]=physical_mode:Metro&forbidden_uris[]=physical_mode:CheckOut&forbidden_uris[]=physical_mode:CheckIn&forbidden_uris[]=physical_mode:default_physical_mode", content_type: :json, accept: :json, :'Authorization' => ENV['NAVITIA_KEY']
       itinerary = JSON.parse(response)
       if !itinerary['journeys'].nil?
