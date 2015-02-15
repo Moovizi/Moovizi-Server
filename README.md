@@ -119,10 +119,12 @@ You can then get all stations available from Navitia API using our `GET /station
       <td>GET</td>
       <td>/itinerary</td>
       <td>
-        <li>latitude (float)</li>
-        <li>longitude (float)</li>
-        <li>datetime (datetime) </li>
-        <li>datetime_represents (string) - <b>optional</b></li>
+        <ul>
+          <li>latitude (float)</li>
+          <li>longitude (float)</li>
+          <li>datetime (datetime) </li>
+          <li>datetime_represents (string) - <b>optional</b></li>
+        </ul>
       </td>
     </tr>
   </tbody>
