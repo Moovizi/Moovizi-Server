@@ -51,6 +51,7 @@ end
 gem 'rails_12factor'
 
 gem 'rspec-rails'
+gem 'json_spec'
 gem 'rest-client'
 gem 'upmin-admin'
 gem 'geocoder'
