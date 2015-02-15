@@ -50,10 +50,10 @@ end
 ## Heroku
 gem 'rails_12factor'
 
+gem 'rspec-rails'
 gem 'rest-client'
 gem 'upmin-admin'
 gem 'geocoder'
-# gem 'aws-sdk'
 gem 'paperclip'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2'
